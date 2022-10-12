@@ -41,10 +41,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <span>Write a new tweet <br><i class="fa-solid fa-angles-down"></i></span>
+      <span><strong>Write</strong> a new tweet <br><i class="fa-solid fa-angles-down"></i></span>
     </nav>
 
-    <header>
+    <header class="header">
       <div>
         <div>
           <img src="/images/profile-hex.png"> 
@@ -69,6 +69,30 @@
             <output name="counter" id="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="new-tweet">
+        <article class="fake-article">
+          <header class="fake-header">
+            <div>
+              <i class="fa-regular fa-face-meh"></i>
+              <span>name</span>
+            </div>
+            <div>
+              <p>@handle</p>
+            </div>
+          </header>
+          <textarea name="text" class="fake-tweet-text">Hello World</textarea>
+          <footer class="fake-footer">
+            <div>
+              <p>time stamp</p>
+            </div>
+            <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+      </article>
       </section>
     </main>
   </body>

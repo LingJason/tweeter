@@ -12,3 +12,59 @@
   border: none;
   border-bottom: 5px solid black;
 }
+
+.fake-tweet {
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f1ec;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.fake-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f1ec;
+  width: 100%;
+  height:100px;
+}
+
+.fake-tweet-text {
+  background-color: #f4f1ec;
+  border: none;
+  width: 100%;
+  border-bottom: 5px solid black;
+}
+
+.fake-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.fake-article {
+  border: 5px solid black;
+}
+
+.fake-article:hover {
+  box-shadow: 5px 10px;
+}
+
+
+.fa-flag:hover {
+  color: yellow;
+}
+
+.fa-repeat:hover {
+  color: yellow;
+}
+
+.fa-heart:hover {
+  color: yellow;
+}
