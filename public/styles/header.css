@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #88828c;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
+}

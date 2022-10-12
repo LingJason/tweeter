@@ -1,0 +1,14 @@
+.textbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet {
+  width: 100%;
+}
+
+#tweet-text {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 5px solid black;
+}
