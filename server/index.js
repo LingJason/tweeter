@@ -33,7 +33,8 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 app.post("/tweets", (req, res) => {
-
+  const text = req.body.text;
+  console.log(text);
 });
 
 app.listen(PORT, () => {
