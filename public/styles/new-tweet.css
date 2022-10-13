@@ -50,6 +50,7 @@ header {
 
 .fake-article {
   border: 5px solid black;
+  margin-top: 20px;
 }
 
 .fake-article:hover {

@@ -1,11 +1,11 @@
-$(document).ready(function() {
- 
+$(document).ready(function () {
+
   //Grab the form
   $form = $('.form-tweet');
   const $text = $('#tweet-text');
 
   // listen for the form to submit
-  $form.on('submit',(event) => {
+  $form.on('submit', (event) => {
     // Stops browser from doing the default
     event.preventDefault();
     const textVal = $text.val();
@@ -14,63 +14,64 @@ $(document).ready(function() {
       return alert("Not Valid Entry, Try Again!");
     }
     if (textVal.length > 140) {
-       return alert("Too Many Characters, Please Shorten");
+      return alert("Too Many Characters, Please Shorten");
     }
 
     // Get the data
     const dataToSendToServer = $form.serialize();
-    
+
     //Send the information to the server via a POST request
     $.ajax({
-      method:'POST',
+      method: 'POST',
       url: '/tweets',
       data: dataToSendToServer
     })
-    .then((response) => {
-      //Clears the Text
-      $text.val('');
+      .then((response) => {
+        console.log('Response', response);
+        //Clears the Text
+        $text.val('');
 
-      // Create a new Article based on the the new info
-      createTweetElement();
+        // Create a new Article based on the the new info
+        const tweetElement = createTweetElement(response);
 
-      // Prepend the info
-      // $(new-).prepend();
-      console.log('Response', response);
-    })
-    .catch((err) => {
-      console.log('Error', err);
-    })
+        // Prepend the info
+        $('#fakeTweet').prepend(tweetElement);
+
+      })
+      .catch((err) => {
+        console.log('Error', err);
+      })
   });
 
-  const loadTweets = function() {
+  const loadTweets = function () {
     // Make Ajax request from /tweets
     $.ajax({
-      url:'/tweets',
+      url: '/tweets',
       method: 'GET'
     })
-    .then((data) => {
-      renderTweets(data);
-    })
-    .catch((err) => {
-    })
+      .then((data) => {
+        renderTweets(data);
+      })
+      .catch((err) => {
+      })
   };
 
-    const renderTweets = function(tweets) {
-      // loops through tweets
-      for (const tweet of tweets) {
-        // calls createTweetElement for each tweet
-        let result = createTweetElement(tweet);
-        // takes return value and appends it to the tweets container
-        $('#fakeTweet').prepend(result);
-      }
+  const renderTweets = function (tweets) {
+    // loops through tweets
+    for (const tweet of tweets) {
+      // calls createTweetElement for each tweet
+      let result = createTweetElement(tweet);
+      // takes return value and appends it to the tweets container
+      $('#fakeTweet').prepend(result);
     }
-    
-    const createTweetElement = function(tweet) {
+  }
+
+  const createTweetElement = function (tweet) {
     // let $tweet = /* Your code for creating the tweet element 
-      const $tweet = $(`<article class="fake-article">
+    const $tweet = $(`<article class="fake-article">
       <header class="fake-header">
         <div>
-          <i class="fa-regular fa-face-meh"></i>
+          <img src="${tweet.user.avatars}">
           <span>${tweet.user.name}</span>
         </div>
         <div>
@@ -88,10 +89,11 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart"></i>
         </div>
       </footer>
-  </article>`);
-      return $tweet;
-    }
-    loadTweets();
+  </article>`
+  );
+    return $tweet;
+  }
+  loadTweets();
 });
 
 /*
