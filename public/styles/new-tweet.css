@@ -57,7 +57,6 @@ header {
   box-shadow: 5px 10px;
 }
 
-
 .fa-flag:hover {
   color: yellow;
 }
@@ -68,4 +67,17 @@ header {
 
 .fa-heart:hover {
   color: yellow;
+}
+
+.error {
+  position: absolute;
+  border-radius: 5px;
+  background-color: white;
+  border: 5px red solid ;
+  color: red;
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  
 }
