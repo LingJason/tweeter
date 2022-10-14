@@ -7,13 +7,13 @@ $(document).ready(function() {
   // Change event
   $tweet.keydown(function(event) {
     const tweetLength = event.target.value.length;
-    const count = maxChar-tweetLength;
-    $counter.val(count)
-    if(count >= 0) {
+    const count = maxChar - tweetLength;
+    $counter.val(count);
+    if (count >= 0) {
       $($counter).css("color", "black");
     }
-    if(count < 0) {
-     $($counter).css("color", "red");
+    if (count < 0) {
+      $($counter).css("color", "red");
     }
   });
-}); 
+});

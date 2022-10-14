@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -47,10 +47,10 @@ $(document).ready(function () {
       })
       .catch((err) => {
         console.log('Error', err);
-      })
+      });
   });
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     // Make Ajax request from /tweets
     $.ajax({
       url: '/tweets',
@@ -60,10 +60,10 @@ $(document).ready(function () {
         renderTweets(data);
       })
       .catch((err) => {
-      })
+      });
   };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -71,10 +71,10 @@ $(document).ready(function () {
       // takes return value and appends it to the tweets container
       $('#fakeTweet').prepend(result);
     }
-  }
+  };
 
-  const createTweetElement = function (tweet) {
-    // let $tweet = /* Your code for creating the tweet element 
+  const createTweetElement = function(tweet) {
+    // let $tweet = /* Your code for creating the tweet element
     const $tweet = $(`<article class="fake-article">
       <header class="fake-header">
         <div>
@@ -97,9 +97,9 @@ $(document).ready(function () {
         </div>
       </footer>
   </article>`
-  );
+    );
     return $tweet;
-  }
+  };
   loadTweets();
 });
 
