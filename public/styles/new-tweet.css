@@ -21,10 +21,40 @@
   border-radius: 5px;
 }
 
+.fa-angles-down {
+  padding-top: 5px;
+  color: red;
+  animation: bounce 0.9s infinite;
+}
+
+@keyframes bounce {
+  10% {
+    height: 3px;
+    width: 3px
+  }
+  30% {
+    height: 3px;
+    width: 2px;
+  }
+  50% {
+    height: 2px;
+    width: 4px;
+    transform: translateY(6px);
+  }
+  75% {
+    height:3px;
+    width: 6px;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .fake-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 header {
@@ -41,6 +71,11 @@ header {
   border: none;
   width: 100%;
   border-bottom: 5px solid black;
+  padding: 10px;
+}
+
+.fake-header {
+  padding: 10px;
 }
 
 .fake-label {
@@ -59,14 +94,17 @@ header {
 
 .fa-flag:hover {
   color: yellow;
+  padding: 5px;
 }
 
 .fa-repeat:hover {
   color: yellow;
+  padding: 5px;
 }
 
 .fa-heart:hover {
   color: yellow;
+  padding: 5px;
 }
 
 .error {
@@ -79,5 +117,21 @@ header {
 }
 
 @media only screen and (min-width: 1024px) {
-  
+  .body-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+  }
+  #header {
+    width: 35% ;
+  }
+  #container {
+    width: 55%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 120px;
+  }
+
 }

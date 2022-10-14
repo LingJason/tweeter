@@ -1,9 +1,10 @@
 nav {
-  position: fixed;
+  position:fixed;
   height: 120px;
   top: 0%;
   width: 100%;
-  background-color: #4056a1;
+  background-color: #c8c4cb2f;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -14,4 +15,11 @@ nav {
 
 span.title {
   font-family:'Bungee', cursive;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }
