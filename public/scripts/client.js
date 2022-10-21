@@ -37,6 +37,7 @@ $(document).ready(function() {
         console.log('Response', response);
         //Clears the Text
         $text.val('');
+        $("#counter").val(140);
 
         // Create a new Article based on the the new info
         const tweetElement = createTweetElement(response);

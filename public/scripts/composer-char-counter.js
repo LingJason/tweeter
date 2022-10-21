@@ -5,7 +5,7 @@ $(document).ready(function() {
   const maxChar = 140;
 
   // Change event
-  $tweet.keydown(function(event) {
+  $tweet.keyup(function(event) {
     const tweetLength = event.target.value.length;
     const count = maxChar - tweetLength;
     $counter.val(count);
